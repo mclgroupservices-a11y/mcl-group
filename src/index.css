@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Industrial color palette - sobrio e innovador */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 0 84% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 0 84% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 0 84% 45%;
+
+    --radius: 0.25rem;
+
+    /* Industrial design tokens */
+    --steel-gray: 220 15% 20%;
+    --steel-gray-light: 220 15% 35%;
+    --steel-gray-dark: 220 15% 10%;
+    --industrial-red: 0 84% 45%;
+    --industrial-red-light: 0 84% 55%;
+    --concrete-gray: 220 10% 92%;
+    --metal-shine: 0 0% 85%;
+    
+    /* Ferrenort color palette */
+    --ferrenort-red: 2 81% 50%;
+    --ferrenort-green: 153 100% 26%;
+    --ferrenort-yellow: 43 98% 49%;
+    --ferrenort-dark: 0 0% 20%;
+    
+    /* Gradients - estilo industrial */
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 10%) 0%, hsl(220 15% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+    --gradient-metal: linear-gradient(135deg, hsl(220 15% 90%) 0%, hsl(220 15% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 45%) 0%, hsl(0 84% 55%) 100%);
+    
+    /* Shadows - sutiles y profesionales */
+    --shadow-soft: 0 2px 8px hsl(220 15% 15% / 0.06);
+    --shadow-medium: 0 4px 16px hsl(220 15% 15% / 0.10);
+    --shadow-strong: 0 8px 32px hsl(220 15% 15% / 0.12);
+    --shadow-industrial: 0 10px 40px hsl(220 15% 15% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 84% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 0 84% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 0 84% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
